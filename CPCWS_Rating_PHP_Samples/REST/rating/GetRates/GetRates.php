@@ -96,14 +96,21 @@ if (!$xml) {
 	}
 } else {
 	if ($xml->{'price-quotes'} ) {
+    $letter_q;
 		$priceQuotes = $xml->{'price-quotes'}->children('http://www.canadapost.ca/ws/ship/rate-v4');
 		if ( $priceQuotes->{'price-quote'} ) {
 			foreach ( $priceQuotes as $priceQuote ) {
+        if ( $priceQuote->{'service-name'} == 'Regular Parcel') {
+          $letter_q = $priceQuote->{'service-standard'}->{'expected-delivery-date'};
+        }
 				echo 'Service Name: ' . $priceQuote->{'service-name'} . "<br>";
 				echo 'Price: ' . $priceQuote->{'price-details'}->{'due'} . "<br>";
 				echo 'Estimated Delivery Date: ' . $priceQuote->{'service-standard'}->{'expected-delivery-date'} . "<br><br>";
 			}
 		}
+    echo 'Service Name: Regular Letter Mail' . "<br />";
+    echo 'Price: 1.07 for a single stamp or 0.92/stamp in booklet' . "<br />";
+    echo 'Estimated Delivery Date: ' . $letter_q . "<br />";
 	}
 	if ($xml->{'messages'} ) {
 		$messages = $xml->{'messages'}->children('http://www.canadapost.ca/ws/messages');

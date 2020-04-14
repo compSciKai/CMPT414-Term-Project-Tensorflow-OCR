@@ -94,7 +94,9 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <p>Many other
     functions exist within the Canada Post Developer Program, such as parcel tracking, address-compete which finds addresses with missing
     info, and connection to E-commerce Platforms such as Shopify. The Developer program includes any functions needed to start your own
-    E-commerce website. The program uses the PHP, Java, and C# languages for developers to use.</p>
+    E-commerce website. The program uses the PHP, Java, and C# languages for developers to use.<br /><br />The API calls on this website assume
+    a letter weight of 30 grams, and a parcel size of 1 kilogram, but other sizes can be implemented in the future for better accuracy. Canada Postal
+    charges based on weight of mail/parcels.</p>
     <p class="w3-wide w3-text-light-grey">Web Development   --   <a href="https://www.w3schools.com/default.asp">w3schools.com</a> </p>
     <hr style="width:650px" class="w3-opacity" />
     <p>We used a website as a medium to hold the different technologies together. A user can upload an image from a computer or mobile device
@@ -109,14 +111,15 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <img src="/images/kai_bio.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px;">
     <p class="w3-text-light-grey"><span class="w3-large w3-margin-right w3-text-light-grey">Kainoa Seaman. <a href="https://www.linkedin.com/in/kainoa-seaman/"  style="padding-left:5px">
       <i class="fa fa-linkedin w3-hover-opacity w3-xlarge"></i></a> <a href="mailto:kseaman@sfu.ca">
-        <i class="fa fa-envelope fa-fw w3-text-white w3-xlarge w3-margin-right w3-hover-opacity"></i></a></span>SFU Computing Science B.Sci Student.</p>
+        <i class="fa fa-envelope fa-fw w3-text-white w3-xlarge w3-margin-right w3-hover-opacity"></i></a></span>SFU Computing Science BASc Student.</p>
     <p>Kainoa Implemented the web technologies, and set up Canada Post API Calls. Consulted on OCR algorithm design.</p><br>
 
-    <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p class="w3-text-light-grey"><span class="w3-large w3-margin-right">Jarrod Davies. <a href=""  style="padding-left:5px">
-      <i class="fa fa-linkedin w3-hover-opacity w3-xlarge"></i></a> <a href="mailto:@sfu.ca">
-        <i class="fa fa-envelope fa-fw w3-text-white w3-xlarge w3-margin-right w3-hover-opacity"></i></a></span> [ Reserved ].</p>
-    <p>[ Reserved ].</p>
+    <img src="/images/jarrod.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p class="w3-text-light-grey"><span class="w3-large w3-margin-right">Jarrod Davies. <a href="https://www.linkedin.com/in/jarrod-davies-ba2a3655/?
+      fbclid=IwAR2F6xqJ41jE0L2rpU1ToJ9NOXn7l6WRZfr-wc0ogV-JBGE5KZEbQayjAn0"  style="padding-left:5px">
+      <i class="fa fa-linkedin w3-hover-opacity w3-xlarge"></i></a> <a href="mailto:jarrodd@sfu.ca">
+        <i class="fa fa-envelope fa-fw w3-text-white w3-xlarge w3-margin-right w3-hover-opacity"></i></a></span> SFU Computer Engineering BASc Student</p>
+    <p>Jarrod Implemented the OCR algorithm using Tensorflow and OpenCV libraries. Trained and tested the functionality of the OCR model.</p>
   <!-- End About Section -->
   </div>
 
@@ -124,7 +127,15 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <div class="w3-padding-64 w3-content" id="steps">
     <h2 class="w3-text-light-grey">Steps to Run Project</h2>
     <hr style="width:200px" class="w3-opacity">
-
+    <ul class="w3-ul">
+      <li>The web app works in one of two ways:</li>
+      <ul class="w3-ul" style="margin-left:15px">
+        <li>Select Browse to find an image to upload, or take a picture using a mobile device. Select Upload Image, and the app will find
+          mail postal codes using OCR and select upload image.<br /></li>
+        <li>Manually enter two postal codes in the origin and destination postal code forms, and select start routing. Please make sure
+        postal codes are in all caps format.</li>
+      </ul>
+    </ul>
   <!-- End Instructions Section -->
   </div>
 
@@ -155,9 +166,12 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <!-- End Contact Section -->
   </div>
 
+  <img src="/images/ocr.gif" alt="img" class="w3-image w3-hide-medium w3-hide-large" style="filter:invert()" width="100%">
+
+
     <!-- Footer -->
   <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+    <p class="w3-medium w3-center">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
   <!-- End footer -->
   </footer>
 
