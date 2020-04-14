@@ -1,0 +1,7 @@
+"tensorflow"
+"opencv-python
+"python-mnist"
+"sckit-learn"
+"pillow"
+"matplotlib"
+"numpy"
