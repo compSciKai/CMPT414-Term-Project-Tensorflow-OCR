@@ -90,14 +90,32 @@ model.compile(loss='categorical_crossentropy',
               metrics=['accuracy'])
 
 history = model.fit(xTrain, yTrain,
-                    batch_size=64,
+                    batch_size=32,
                     epochs=10,
                     verbose=2,
                     validation_data=(xTest, yTest))
 
-model.save('modelComb2.h5')
+model.save('modelComb3.h5')
 
 # Evaluate the model using Accuracy and Loss
 score = model.evaluate(xTest, yTest, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
+
+# Plot training & validation accuracy values
+pyplot.plot(history.history['accuracy'])
+pyplot.plot(history.history['val_accuracy'])
+pyplot.title('Model accuracy')
+pyplot.ylabel('Accuracy')
+pyplot.xlabel('Epoch')
+pyplot.legend(['Train', 'Test'], loc='upper left')
+pyplot.show()
+
+# Plot training & validation loss values
+pyplot.plot(history.history['loss'])
+pyplot.plot(history.history['val_loss'])
+pyplot.title('Model loss')
+pyplot.ylabel('Loss')
+pyplot.xlabel('Epoch')
+pyplot.legend(['Train', 'Test'], loc='upper left')
+pyplot.show()
