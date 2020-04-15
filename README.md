@@ -1,6 +1,3 @@
-## ReadMe
-
-
 ## TA Instructions
 
 Please see https://ocrmail.ca for our project report. We used web hosting to display our final project. Our objective was to show how OCR algorithms can be used with E-commerse for businesses. 
@@ -25,4 +22,3 @@ Kane, Frank. “Machine Learning in Python (Data Science and Deep Learning).” 
 “Image Segmentation Using OpenCV - Extracting Specific Areas of an Image.” Edited by Madhav, OpenCV Image Segmentation: Tutorial for Extracting Specific Areas of an Image, 13 Mar. 2019, circuitdigest.com/tutorial/image-segmentation-using-opencv.
 
 Chandra, Akshay L. “Alphabet_Recognition_Gestures.” GitHub, 17 Apr. 2019, github.com/acl21/Alphabet_Recognition_Gestures.
-

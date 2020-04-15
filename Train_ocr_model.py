@@ -118,4 +118,5 @@ pyplot.title('Model loss')
 pyplot.ylabel('Loss')
 pyplot.xlabel('Epoch')
 pyplot.legend(['Train', 'Test'], loc='upper left')
+
 pyplot.show()
