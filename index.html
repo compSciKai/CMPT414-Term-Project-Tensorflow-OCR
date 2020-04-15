@@ -75,10 +75,32 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <h3 class="w3-padding-16 w3-text-light-grey">Technologies</h3>
     <p class="w3-wide w3-text-light-grey">Tensorflow   --   <a href="https://www.tensorflow.org/">tensorflow.org</a> </p>
     <hr style="width:650px" class="w3-opacity" />
-    <p>[ Reserved for tensorflow content ]</p>
+    <p>For the model design, we used Tensorflow, or more specifically keras (high level API to tensorflow). Initially we opted to train
+      our model for character recognition on the ENIST dataset, but the datasets were separated between Letters, and Digits. Initially
+      we tried to train 2 models, one for each, and figure out whether it’s a letter or digit in the prediction stage, but realized
+      inference based on those probabilities was very difficult. Instead we decided to combine the datasets and train one model.
+      This produced much better results.<br /><br /> As for the convoluted neural network structure, we used a combination of various proven structures,
+       however we decided to add one extra convolution layer to help with the combined dataset we create. Below you can see the accuracy and
+       loss plots for the training, as well as the neural network.</p>
+    <img src="/images/tf1.png" style="width:100%">
     <p class="w3-wide w3-text-light-grey">OpenCV   --   <a href="https://www.opencv.org/">opencv.org</a> </p>
     <hr style="width:650px" class="w3-opacity" />
-    <p>[ Reserved for opencv content ]</p>
+    <p>Opencv adds many useful image processing tools for object segmentation and feature extracting. With opencv we take the image, convert
+    it to greyscale and apply a median blur to the image to reduce the noise, and then apply an inverse threshold to extract the strong features.
+    The difficult part is deciding which features from here on are useful features relating to letter and digits or which are just garbage.<br /><br />
+    In order to feed an image into the model to run a prediction on it, we need to resize and format the image to match the models input.
+    First, we take each extracted feature and scale it down highest dimension to 28px. Then we pad the image with black borders to shape the
+    image to 28x28px and then convert to numpy array and normalize the values and apply the model to the extracted feature to determine the
+    letter or character.</p>
+    <img src="/images/ocv1.png" style="width:95%; filter:invert()">
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half w3-center">
+        <img src="/images/ocv2.png" style="width:27%">
+      </div>
+
+      <div class="w3-half w3-center">
+        <img src="/images/ocv3.png" style="width:30%"><br />
+      </div>
     <p class="w3-wide w3-text-light-grey">Canada Post Developer Program -- <a href="https://www.canadapost.ca/cpc/en">canadapost.ca</a></p>
       <hr style="width:650px" class="w3-opacity" />
     <p>Canada Post has created a developer API to connect to their services. First we had to set up an account, and then were
