@@ -1,7 +1,7 @@
-"tensorflow"
-"opencv-python
-"python-mnist"
-"sckit-learn"
-"pillow"
-"matplotlib"
-"numpy"
+tensorflow
+opencv-python
+python-mnist
+scikit-learn
+pillow
+matplotlib
+numpy
