@@ -1,7 +1,3 @@
-# test.py
-
-import sys
-
-#file = sys.argv[1]
+#!/usr/bin/env python
 
 print('hello world!')

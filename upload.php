@@ -56,7 +56,8 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.<br /><br />";
-        $command = escapeshellcmd('python3 /home/kainoa/Documents/git/CMPT414-Term-Project-Tensorflow-OCR/test.py');
+        //$command = escapeshellcmd('python3 /home/kainoa/Documents/git/CMPT414-Term-Project-Tensorflow-OCR/test.py');
+        $command = escapeshellcmd('/home/ocrmailc/public_html/test.py');
         $output = shell_exec($command);
         echo $output;
     } else {
