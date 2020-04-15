@@ -12,10 +12,10 @@ letters = { 1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e', 6: 'f', 7: 'g', 8: 'h', 9: '
 
 model = tf.keras.models.load_model("modelComb2.h5") #Load Model
 
-img = cv2.imread('add3.jpg')	#Load image
+img = cv2.imread('address2.jpg')	#Load image
 imgray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 img = cv2.medianBlur(imgray,5)
-ret, thresh = cv2.threshold(img, 150, 255, cv2.THRESH_BINARY_INV)
+ret, thresh = cv2.threshold(img, 130, 255, cv2.THRESH_BINARY_INV)
 contours, hierarchy = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
 characterSeg = list()
@@ -33,6 +33,9 @@ for c in contours: # List of all x,y,w,h and Segmenation of characters
     hlist.append(h)
     wlist.append(w)
     areaList.append(w*h)
+
+#plt.imshow(thresh,'gray')
+#plt.show()
 
 maxArea = sorted(areaList)[len(areaList)-1] # second max area in hopes of ignoring outlier (still need better method)
    
@@ -53,13 +56,13 @@ maxy=sorted(ylist)[len(ylist)-1]
 miny = sorted(ylist)[1]
 aveW = sum(wlist)/len(wlist)
 newlist =list()
-lines = round(((maxy -miny)/maxh))
+lines = round(((maxy -miny)/maxh)-0.1)
 
-
+#print(lines)
 dictList = dict()
 for l in reversed(range(lines)): # seperating characters based on lines (need better implementation)
 	for i in range(len(ylist)):
-		if(abs(maxy-ylist[i]-(maxh*l*1.2)) <= maxh*0.4):
+		if(abs(maxy-ylist[i]-(maxh*l*1.35)) <= maxh*0.4):
 			newlist.append([xlist[i],wlist[i]])
 
 	dictList[l] = list(sorted(newlist))
@@ -134,9 +137,9 @@ for key in dictList.keys():
 		diffCount += 1
 
 			#Preview each extracted character 
-		#cv2.imshow("i",predictImg.reshape(28,28))
-		#cv2.waitKey(0)
-		#cv2.destroyAllWindows()
+		# cv2.imshow("i",predictImg.reshape(28,28))
+		# cv2.waitKey(0)
+		# cv2.destroyAllWindows()
 	wordDict[key]=str(''.join(predText))
 	predText.clear()
 
