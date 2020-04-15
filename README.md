@@ -14,7 +14,7 @@ A few things to note:
   to show how OCR can be used with E-commerce. 
   
 ## Dependencies
-- Preferably create a new python >=3.6 and run 'pip install -r requirements.txt'
+- Preferably create a new python env >=3.6 and run 'pip install -r requirements.txt'
 
 ## Sources
 
