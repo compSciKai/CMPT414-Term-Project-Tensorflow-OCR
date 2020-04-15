@@ -12,6 +12,9 @@ A few things to note:
   
 - We did not have enough time to implement the 'find closest post office' php function, but the 'find rate' function is enough
   to show how OCR can be used with E-commerce. 
+  
+## Dependencies
+- Preferably create a new python >=3.6 and run 'pip install -r requirements.txt'
 
 ## Sources
 
