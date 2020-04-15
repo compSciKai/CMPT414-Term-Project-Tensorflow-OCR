@@ -12,6 +12,7 @@ A few things to note:
   
 - We did not have enough time to implement the 'find closest post office' php function, but the 'find rate' function is enough
   to show how OCR can be used with E-commerce. 
+
 ## Sources
 
 Cohen, G., Afshar, S., Tapson, J., & van Schaik, A. (2017). EMNIST: an extension of MNIST to handwritten letters. Retrieved from http://arxiv.org/abs/1702.05373
